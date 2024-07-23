@@ -1,0 +1,20 @@
+name: 'polyfill-glibc-action'
+description: 'polyfill-glibc binary patcher for backwards glibc compatibility'
+branding:
+  icon: 'box'
+  color: 'green'
+inputs:
+  target:
+    description: "path to ELF binary"
+    default: ''
+    required: true
+  glibc:
+    description: "glibc target version"
+    default: '2.17'
+    required: false
+outputs:
+  binary:
+    description: "Polyfilled binary"
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/lmangani/polyfill-glibc-action:main'
