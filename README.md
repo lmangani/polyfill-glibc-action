@@ -21,6 +21,16 @@ Version of glibc to patch against. Default: `2.17`
 
 ## Example usage
 
+### Install Only
+
+    - name: Patch glibc for backwards compatibility
+      uses: lmangani/polyfill-glibc-action:main
+      id: polyfill
+      with:
+        install: "true"
+    - run: polyfill-glibc --target-glibc=2.17 /path/to/binary
+
+### Execute & Replace file
     - name: Patch glibc for backwards compatibility
       uses: lmangani/polyfill-glibc-action:main
       id: polyfill
