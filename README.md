@@ -24,7 +24,7 @@ Version of glibc to patch against. Default: `2.17`
 ### Install Only
 
     - name: Patch glibc for backwards compatibility
-      uses: lmangani/polyfill-glibc-action:main
+      uses: lmangani/polyfill-glibc-action@main
       id: polyfill
       with:
         install: "true"
@@ -32,7 +32,7 @@ Version of glibc to patch against. Default: `2.17`
 
 ### Execute & Replace file
     - name: Patch glibc for backwards compatibility
-      uses: lmangani/polyfill-glibc-action:main
+      uses: lmangani/polyfill-glibc-action@main
       id: polyfill
       with:
         glibc: "2.28"
