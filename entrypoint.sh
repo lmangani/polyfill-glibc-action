@@ -1,5 +1,9 @@
 #!/bin/sh -l
 
+if [ "x$INPUT_INSTALL" != "x" ]; then
+    echo $(find $(pwd) -name 'polyfill-glibc' -printf "%h\n" | sort -u) >> $GITHUB_PATH
+fi
+
 if [ "x$INPUT_TARGET" != "x" ] && [ "x$INPUT_GLIBC" != "x" ]; then
     if [ "x$INPUT_TARGET" != "x" ]; then
         cp $INPUT_TARGET /tmp/$INPUT_TARGET
@@ -9,6 +13,7 @@ if [ "x$INPUT_TARGET" != "x" ] && [ "x$INPUT_GLIBC" != "x" ]; then
         exit 1
     fi
     echo "::set-output name=binary::$name"
+    echo $(find $(pwd) -name 'polyfill-glibc' -printf "%h\n" | sort -u) >> $GITHUB_PATH
 else
     sh -c "$@"
 fi
