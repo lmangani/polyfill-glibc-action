@@ -4,7 +4,6 @@ set -e
 if [ "x$INPUT_INSTALL" != "x" ]; then
     echo "Installing polyfill-glibc to $GITHUB_PATH"
     echo $(find $(pwd) -name 'polyfill-glibc' -printf "%h\n" | sort -u) >> $GITHUB_PATH
-    echo "::set-output name=binary::$(find $(pwd) -name 'polyfill-glibc' -printf "%h\n" | sort -u)/polyfill-glibc"
 fi
 
 if [ "x$INPUT_TARGET" != "x" ] && [ "x$INPUT_GLIBC" != "x" ]; then
@@ -16,7 +15,7 @@ if [ "x$INPUT_TARGET" != "x" ] && [ "x$INPUT_GLIBC" != "x" ]; then
     if [ "x$name" == "x" ]; then
         exit 1
     fi
-    echo "::set-output name=binary::$name"
+    echo "binary=$name" >> $GITHUB_OUTPUT
 else
     sh -c "$@"
 fi
