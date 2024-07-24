@@ -4,10 +4,14 @@ branding:
   icon: 'box'
   color: 'green'
 inputs:
+  install:
+    description: "install polyfill-glibc"
+    default: 'true'
+    required: false
   target:
     description: "path to ELF binary"
     default: ''
-    required: true
+    required: false
   glibc:
     description: "glibc target version"
     default: '2.17'
