@@ -9,9 +9,9 @@ jobs:
     steps:
     - name: Download some binary
       run: |
-        curl -fsSL https://github.com/metrico/urlengine/releases/download/v0.0.3/duckserver_magic -O test
+        curl -fsSL https://github.com/metrico/urlengine/releases/download/v0.0.3/duckserver_magic
     - name: Patch glibc for backwards compatibility
       uses: lmangani/polyfill-glibc-action@1.1.2
       with:
         glibc: "2.27"
-        target: "test"
+        target: "duckserver_magic"
