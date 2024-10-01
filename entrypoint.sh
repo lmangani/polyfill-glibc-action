@@ -9,7 +9,8 @@ fi
 if [ "x$INPUT_TARGET" != "x" ] && [ "x$INPUT_GLIBC" != "x" ]; then
     if [ "x$INPUT_TARGET" != "x" ]; then
         echo "Running polyfill-glibc with target $INPUT_TARGET"
-        name=$(sh -c "polyfill-glibc --target-glibc=$INPUT_GLIBC $INPUT_TARGET || echo $INPUT_TARGET")
+        polyfill-glibc --target-glibc=$INPUT_GLIBC $INPUT_TARGET || echo $INPUT_TARGET
+        name="$INPUT_TARGET"
     fi
     if [ "x$name" == "x" ]; then
         exit 1
