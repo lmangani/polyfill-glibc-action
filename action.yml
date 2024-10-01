@@ -21,4 +21,4 @@ outputs:
     description: "Polyfilled binary"
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/lmangani/polyfill-glibc-action:main'
+  image: 'docker://ghcr.io/lmangani/polyfill-glibc-action:latest'
