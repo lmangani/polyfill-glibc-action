@@ -14,4 +14,4 @@ jobs:
       uses: lmangani/polyfill-glibc-action@1.1.4
       with:
         glibc: "2.27"
-        target: "test"
+        target: "./test"
